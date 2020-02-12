@@ -1,0 +1,29 @@
+ type Query {
+    "Obtenemos la Lista de Todos los Usuarios"
+    users:[User!]!
+    "Iniciamos Secion en El Sistema"
+    login(email:String!,password:String!):User!
+    "Obtener Nuesta Info con el Token"
+    me:User!
+}
+
+type Mutation{
+    "Registro De los Usuarios En el Sistema"
+    register(user:UserInput):User!
+}
+
+type User{
+    id:ID!
+    name:String!
+    lastName:String!
+    email:String!
+    password:String
+    registerDate:String!
+}
+
+input UserInput{
+    name:String!
+    lastName:String!
+    email:String!
+    password:String!
+}
